@@ -3,6 +3,7 @@ const url = require("../models/url")
 async function HandlerURLGeneration(req,res){
     const ShortId = nanoid(8);
     const body = req.body;
+    console.log(body)
     if( !body.url ) return res.json({error:"url needed"}).status(400) 
     url.create({
         ShortUrl:ShortId,

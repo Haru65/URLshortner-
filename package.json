@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/Haru65/URLshortner-#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "mongoose": "^8.9.5",
+    "mongoose": "^8.13.2",
     "nanoid": "^3.3.8",
     "nodemon": "^3.1.9"
-  }
+  },
+  "keywords": [],
+  "type": "commonjs"
 }

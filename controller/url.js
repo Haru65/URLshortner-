@@ -43,5 +43,19 @@ async function HandlerAnalytics(req,res) {
     return res.json({totalClicks:result.log.length,analytics:result.log})
     
 }
+async function HandlerReturnAll(req,res) {
+    
+    
+   /*      // const ALLurls = await url.find()    
+        // ALLurls.forEach((urls) => {
+        //     URLS [url.ShortId,url.ShortUrl]= urls
+            
+        // console.log(urls)        
+// }
+// ); */
+    const ALLurls = await url.find().select("-log")
+    console.log(ALLurls)
 
-module.exports= {HandlerURLGeneration,HandlerRedirect,HandlerAnalytics}
+    return res.json({ALLurls})
+}
+module.exports= {HandlerURLGeneration,HandlerRedirect,HandlerAnalytics,HandlerReturnAll}

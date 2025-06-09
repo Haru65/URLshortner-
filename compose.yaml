@@ -4,21 +4,11 @@ services:
   api: 
     build: .
     ports:
-      - "0:800"
+      - "3000:3000"
     depends_on:
       - mongo
     environment:
-      - MONGO_URI=mongodb://mongo:27017/shortUrl
+      - mongodb+srv://adityakhandagale69:KR7Sm5bmUbgRMUwI@cluster0.0pq59kn.mongodb.net/
     volumes:
       - .:/usr/src/app
     restart: always
-  mongo:
-    image: mongo:6
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-    restart: always
-
-volumes:
-  mongo-data:

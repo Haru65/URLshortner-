@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"  # Fix port binding format and match your app's actual port
+    env_file:
+      - .env         # ✅ Correct way to load environment variables
+    volumes:
+      - .:/usr/src/app
+    restart: always
+    dns:
+      - 8.8.8.8       # ✅ Fix DNS resolution issue for cluster0.mongodb.net

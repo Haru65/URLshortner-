@@ -1,24 +1,13 @@
-version: '3.8'
 
 services:
-  api: 
+  api:
     build: .
     ports:
-      - "0:800"
-    depends_on:
-      - mongo
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/shortUrl
+      - "8000:8000"  # Fix port binding format and match your app's actual port
+    env_file:
+      - .env         # ✅ Correct way to load environment variables
     volumes:
       - .:/usr/src/app
     restart: always
-  mongo:
-    image: mongo:6
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-    restart: always
-
-volumes:
-  mongo-data:
+    dns:
+      - 8.8.8.8       # ✅ Fix DNS resolution issue for cluster0.mongodb.net

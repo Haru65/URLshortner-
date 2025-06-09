@@ -6,7 +6,7 @@ const path = require ("path")
 const router = express.Router();
 const app = express();
 const port = 8080;
-const MONGO_URI = process.env.MONGO_URI || "mongodb://mongodb:27017/shortUrl";
+const MONGO_URI = "mongodb://localhost:27017/shorturl/urls"
 //middleware
 app.use(express.json( ))
 app.use(express.urlencoded({ extended: true }));
